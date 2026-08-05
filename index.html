@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#171c25" />
+  <title>インフラ王 | INFRA KING</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <main class="game-shell">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">8-BIT CITY BUILDER</p>
+        <h1>インフラ王</h1>
+      </div>
+      <button id="resetBtn" class="ghost-button" type="button">はじめから</button>
+    </header>
+
+    <section class="status-panel" aria-label="都市ステータス">
+      <div><span>YEAR</span><strong id="yearValue">1</strong></div>
+      <div><span>資金</span><strong id="moneyValue">¥120</strong></div>
+      <div><span>人口</span><strong id="populationValue">0</strong></div>
+      <div><span>税収</span><strong id="incomeValue">¥0</strong></div>
+    </section>
+
+    <section class="game-layout">
+      <div class="map-frame">
+        <div id="map" class="map" role="grid" aria-label="都市マップ"></div>
+        <div id="floatMessage" class="float-message" aria-live="polite"></div>
+      </div>
+
+      <aside class="side-panel">
+        <section>
+          <h2>建設</h2>
+          <div id="tools" class="tools">
+            <button class="tool active" data-tool="road" type="button"><span>═</span><b>道路</b><small>¥4</small></button>
+            <button class="tool" data-tool="station" type="button"><span>駅</span><b>駅</b><small>¥28</small></button>
+            <button class="tool" data-tool="power" type="button"><span>電</span><b>発電所</b><small>¥36</small></button>
+            <button class="tool" data-tool="water" type="button"><span>水</span><b>浄水場</b><small>¥32</small></button>
+            <button class="tool" data-tool="park" type="button"><span>木</span><b>公園</b><small>¥16</small></button>
+            <button class="tool" data-tool="bulldoze" type="button"><span>×</span><b>撤去</b><small>¥2</small></button>
+          </div>
+        </section>
+
+        <button id="nextYearBtn" class="next-year" type="button">▶ 1年進める</button>
+
+        <section class="report-box">
+          <h2>市民レポート</h2>
+          <p id="reportText">まず道路を引き、電気と水を届けよう。</p>
+        </section>
+
+        <section class="legend">
+          <h2>発展条件</h2>
+          <p><span class="dot house"></span>住宅：道路＋電気＋水</p>
+          <p><span class="dot shop"></span>商店：道路＋駅の近く</p>
+          <p><span class="dot factory"></span>工場：道路＋電気</p>
+        </section>
+      </aside>
+    </section>
+  </main>
+
+  <script src="./game.js"></script>
+</body>
+</html>
